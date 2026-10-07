@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinaria - Panel Principal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="dashboard.html" class="navbar-brand">
+            <i class="fas fa-paw" style="color: #319795;"></i>
+            <span>Veterinaria</span>
+        </a>
+        <div class="nav-links">
+            <a href="dashboard.html" class="active">Inicio</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="citas.html">Citas</a>
+            <button id="btnLogout" class="btn-logout">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <div style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+        <h1 style="color: #1a243c; margin-bottom: 0.5rem;">Bienvenido al Sistema</h1>
+        <p style="color: #718096; margin-bottom: 2rem;">Gestión integral de la clínica veterinaria.</p>
+
+        <div class="dashboard-grid">
+            <div class="kpi-card">
+                <h3>Pacientes Registrados</h3>
+                <div class="number" id="totalPacientes">0</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Citas Pendientes</h3>
+                <div class="number" id="totalCitas">0</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Atenciones Hoy</h3>
+                <div class="number">0</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
