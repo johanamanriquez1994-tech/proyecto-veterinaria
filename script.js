@@ -4,6 +4,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // USUARIO DE PRUEBA POR DEFECTO PARA INGRESAR DIRECTAMENTE
+    const usuariosIniciales = JSON.parse(localStorage.getItem('usuariosVeterinaria')) || [];
+    const existeAdmin = usuariosIniciales.some(u => u.email === 'admin@veterinaria.cl');
+    
+    if (!existeAdmin) {
+        usuariosIniciales.push({
+            nombre: 'Administrador Demo',
+            email: 'admin@veterinaria.cl',
+            telefono: '+56912345678',
+            password: '123456'
+        });
+        localStorage.setItem('usuariosVeterinaria', JSON.stringify(usuariosIniciales));
+    }
+
     // 1. MANEJO DEL FORMULARIO DE REGISTRO
     const registroForm = document.getElementById('registroForm');
     if (registroForm) {
@@ -79,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('usuarioActivo', JSON.stringify(usuarioValido));
                 window.location.href = 'dashboard.html';
             } else {
-                mostrarAlerta('Correo o contraseña incorrectos. Si no tienes cuenta, regístrate primero.');
+                mostrarAlerta('Correo o contraseña incorrectos.');
             }
         });
     }

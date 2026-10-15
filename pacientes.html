@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinaria - Gestión de Pacientes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="dashboard.html" class="navbar-brand">
+            <i class="fas fa-paw" style="color: #319795;"></i>
+            <span>Veterinaria</span>
+        </a>
+        <div class="nav-links">
+            <a href="dashboard.html">Inicio</a>
+            <a href="pacientes.html" class="active">Pacientes</a>
+            <a href="citas.html">Citas</a>
+            <button id="btnLogout" class="btn-logout">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <div style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+        <h2 style="color: #1a243c; margin-bottom: 1.5rem;">Gestión de Pacientes (Mascotas)</h2>
+
+        <div id="alertBox" class="alert alert-error" style="display: none; background-color: #fed7d7; color: #9b2c2c; padding: 0.8rem; border-radius: 8px; margin-bottom: 1rem;"></div>
+
+        <!-- FORMULARIO DE REGISTRO DE PACIENTE -->
+        <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 2rem;">
+            <h3 style="color: #2d3748; margin-bottom: 1rem;">Registrar Nueva Mascota</h3>
+            
+            <form id="pacienteForm" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div class="form-group">
+                    <label for="nombreMascota">Nombre Mascota</label>
+                    <input type="text" id="nombreMascota" class="form-control" placeholder="Ej: Firulais" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="especie">Especie</label>
+                    <select id="especie" class="form-control" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="Perro">Perro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Conejo">Conejo</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="raza">Raza</label>
+                    <input type="text" id="raza" class="form-control" placeholder="Ej: Poodle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edad">Edad (Años)</label>
+                    <input type="number" id="edad" class="form-control" placeholder="Ej: 3" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dueno">Nombre del Dueño</label>
+                    <input type="text" id="dueno" class="form-control" placeholder="Ej: Juan Pérez" required>
+                </div>
+
+                <div class="form-group" style="grid-column: 1 / -1;">
+                    <button type="submit" class="btn-primary" style="width: auto; padding: 0.8rem 2rem;">Guardar Paciente</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- TABLA DE LISTADO DE PACIENTES -->
+        <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto;">
+            <h3 style="color: #2d3748; margin-bottom: 1rem;">Mascotas Registradas</h3>
+            
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #e2e8f0; color: #4a5568;">
+                        <th style="padding: 0.75rem;">Mascota</th>
+                        <th style="padding: 0.75rem;">Especie</th>
+                        <th style="padding: 0.75rem;">Raza</th>
+                        <th style="padding: 0.75rem;">Edad</th>
+                        <th style="padding: 0.75rem;">Dueño</th>
+                        <th style="padding: 0.75rem;">Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaPacientes">
+                    <!-- Se carga dinámicamente con JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
