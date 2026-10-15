@@ -125,3 +125,45 @@ body {
     text-decoration: none;
     font-weight: 600;
 }
+/* BOTÓN DE CERRAR SESIÓN */
+.btn-logout {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-logout:hover {
+    background-color: #c53030;
+}
+
+/* REJILLA Y TARJETAS DEL DASHBOARD */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.kpi-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-left: 4px solid #319795;
+}
+
+.kpi-card h3 {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}
+
+.kpi-card .number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a243c;
+}
