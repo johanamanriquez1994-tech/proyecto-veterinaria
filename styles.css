@@ -1,205 +1,39 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* FONDO NITIDO CON CONEJO BLANCO SOBRE FONDO OSCURO Y ELEGANTE */
 body {
-    background-color: #1a202c;
-    background-image: linear-gradient(rgba(26, 32, 44, 0.75), rgba(26, 32, 44, 0.75)), 
-                      url('https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=1920&q=80');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    color: #2d3748;
-    line-height: 1.6;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
 }
 
-/* NAVEGACIÓN */
-.navbar {
-    background-color: #1a243c;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.caja {
+    width: 350px;
+    background: white;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
 }
 
-.navbar-brand {
-    color: #ffffff;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.navbar-brand span {
-    color: #319795;
-}
-
-.nav-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.nav-links a {
-    color: #e2e8f0;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    background-color: rgba(49, 151, 149, 0.25);
-    color: #ffffff;
-}
-
-/* FORMULARIOS Y TARJETAS DE ACCESO */
-.auth-container {
-    max-width: 420px;
-    margin: 4rem auto;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(8px);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.auth-title {
-    text-align: center;
-    color: #1a243c;
-    margin-bottom: 1.5rem;
-}
-
-.form-group {
-    margin-bottom: 1.2rem;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    font-size: 0.9rem;
-    color: #4a5568;
-}
-
-.form-control {
+input, button {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #cbd5e0;
-    border-radius: 8px;
-    font-size: 0.95rem;
+    padding: 8px;
+    margin-top: 10px;
+    box-sizing: border-box;
 }
 
-.form-control:focus {
-    outline: none;
-    border-color: #319795;
-    box-shadow: 0 0 0 3px rgba(49, 151, 149, 0.15);
-}
-
-.btn-primary {
-    width: 100%;
-    background-color: #dd6b20;
+button {
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 0.8rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
-.btn-primary:hover {
-    background-color: #c05621;
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
 }
 
-.auth-footer {
-    text-align: center;
-    margin-top: 1.2rem;
-    font-size: 0.9rem;
-}
-
-.auth-footer a {
-    color: #319795;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* BOTÓN DE CERRAR SESIÓN */
-.btn-logout {
-    background-color: #e53e3e;
-    color: white;
-    border: none;
-    padding: 0.4rem 0.9rem;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.btn-logout:hover {
-    background-color: #c53030;
-}
-
-/* TARJETA CON IMAGEN DESTACADA EN DASHBOARD */
-.dashboard-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    margin-bottom: 2rem;
-    gap: 2rem;
-}
-
-.dashboard-banner-text {
-    flex: 1;
-}
-
-.dashboard-banner-img {
-    width: 280px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-/* REJILLA Y TARJETAS DEL DASHBOARD */
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.kpi-card {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    border-left: 4px solid #319795;
-}
-
-.kpi-card h3 {
-    font-size: 1rem;
-    color: #4a5568;
-    margin-bottom: 0.5rem;
-}
-
-.kpi-card .number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1a243c;
+th, td {
+    padding: 6px;
+    text-align: left;
 }
