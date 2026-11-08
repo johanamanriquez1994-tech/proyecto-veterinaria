@@ -4,7 +4,7 @@ function guardarPaciente() {
     var dueno = document.getElementById("dueno").value;
 
     if (mascota === "" || especie === "" || dueno === "") {
-        alert("Llena todos los campos por favor");
+        alert("Llena todos los campos del paciente");
     } else {
         var tabla = document.getElementById("tablaPacientes");
         var fila = "<tr><td>" + mascota + "</td><td>" + especie + "</td><td>" + dueno + "</td></tr>";
