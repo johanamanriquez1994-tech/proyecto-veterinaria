@@ -1,9 +1,18 @@
-Proyecto de Clínica Veterinaria
+Sistema de Clínica Veterinaria
 
-Este proyecto consiste en un sistema web básico para la administración de una clínica veterinaria. 
-Fue desarrollado con una estructura tradicional y limpia, dividida en archivos independientes de HTML, CSS y JavaScript.
+Prototipo de interfaz para una demo de clínica veterinaria, hecho con HTML, CSS y JavaScript plano. No tiene backend, ni dependencias, ni herramientas de compilación: se abre directamente en el navegador.
 
-El sistema permite iniciar sesión, navegar por un panel principal y gestionar dos áreas clave:
-El registro de pacientes, donde se guardan las mascotas junto a sus dueños.
-El agendamiento de citas médicas, el cual incluye validación en el calendario para impedir la selección de fechas pasadas.
+Módulos
 
+- Login: acceso con correo y contraseña.
+- Dashboard: panel principal con los módulos disponibles según el rol.
+- Pacientes: registro de mascotas con su especie y su dueño.
+- Citas: agendamiento de citas para el día de hoy.
+- Tratamientos: registro de tratamientos por paciente.
+
+Credenciales de demo
+
+admin@veterinaria.cl / 123456 -> rol admin (ve todos los módulos)
+vet@veterinaria.cl / 123456 -> rol veterinario (no ve Citas)
+
+Los datos de pacientes, citas y tratamientos se guardan solo en memoria y se pierden al recargar o al cambiar de página. El rol sí queda guardado en localStorage hasta que se usa el botón Salir.
