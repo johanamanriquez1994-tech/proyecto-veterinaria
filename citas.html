@@ -2,27 +2,27 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Citas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="caja" style="width: 450px;">
+    <div class="caja caja-ancha" id="cajaCitas">
         <h2>Citas Médicas</h2>
 
-        <label>Paciente:</label>
-        <input type="text" id="pacienteCita" placeholder="Nombre de la mascota">
+        <form id="formCita" novalidate>
+            <label for="pacienteCita">Paciente:</label>
+            <input type="text" id="pacienteCita" placeholder="Nombre de la mascota">
 
-        <label>Fecha:</label>
-        <input type="date" id="fechaCita" min="2026-11-01">
+            <label for="horaCita">Hora:</label>
+            <input type="time" id="horaCita">
 
-        <label>Hora:</label>
-        <input type="time" id="horaCita">
-
-        <button onclick="guardarCita()">Agendar</button>
+            <button type="submit">Agendar</button>
+        </form>
 
         <h3>Listado de Citas</h3>
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>Paciente</th>
@@ -33,9 +33,11 @@
             <tbody id="tablaCitas"></tbody>
         </table>
 
-        <button onclick="window.location.href='dashboard.html'" style="background-color: #6c757d;">Volver</button>
+        <button type="button" id="btnVolver" class="btn-secundario">Volver</button>
     </div>
 
+    <script src="modal.js"></script>
+    <script src="auth.js"></script>
     <script src="citas.js"></script>
 </body>
 </html>
