@@ -2,27 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pacientes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="caja" style="width: 450px;">
+    <div class="caja caja-ancha">
         <h2>Pacientes</h2>
 
-        <label>Mascota:</label>
-        <input type="text" id="mascota" placeholder="Nombre de la mascota">
+        <form id="formPaciente" novalidate>
+            <label for="mascota">Mascota:</label>
+            <input type="text" id="mascota" placeholder="Nombre de la mascota">
 
-        <label>Especie:</label>
-        <input type="text" id="especie" placeholder="Perro, gato, etc.">
+            <label for="especie">Especie:</label>
+            <input type="text" id="especie" placeholder="Perro, gato, etc.">
 
-        <label>Dueño:</label>
-        <input type="text" id="dueno" placeholder="Nombre del dueño">
+            <label for="dueno">Dueño:</label>
+            <input type="text" id="dueno" placeholder="Nombre del dueño">
 
-        <button onclick="guardarPaciente()">Guardar</button>
+            <button type="submit">Guardar</button>
+        </form>
 
         <h3>Lista</h3>
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>Mascota</th>
@@ -33,9 +36,11 @@
             <tbody id="tablaPacientes"></tbody>
         </table>
 
-        <button onclick="window.location.href='dashboard.html'" style="background-color: #6c757d;">Volver</button>
+        <button type="button" id="btnVolver" class="btn-secundario">Volver</button>
     </div>
 
+    <script src="modal.js"></script>
+    <script src="auth.js"></script>
     <script src="pacientes.js"></script>
 </body>
 </html>

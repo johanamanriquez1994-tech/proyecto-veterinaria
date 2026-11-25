@@ -2,19 +2,25 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel principal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="caja" style="text-align: center;">
-        <h2>Menú Principal</h2>
-        <p>Bienvenidoa tu veterinaria.</p>
-        
-        <button onclick="window.location.href='pacientes.html'">Ir a Pacientes</button>
-        <button onclick="window.location.href='citas.html'">Ir a Citas</button>
-        <button onclick="window.location.href='index.html'" style="background-color: #dc3545;">Salir</button>
+    <div class="caja texto-centrado">
+        <h2>VETERINARIA</h2>
+        <p id="saludo">Bienvenido</p>
+
+        <button type="button" id="btnPacientes">Ir a Pacientes</button>
+        <button type="button" id="btnCitas" hidden>Ir a Citas</button>
+        <button type="button" id="btnTratamientos">Ir a Tratamientos</button>
+        <button type="button" id="btnSalir" class="btn-peligro">Salir</button>
     </div>
 
+    <script src="modal.js"></script>
+    <script src="auth.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>
+
