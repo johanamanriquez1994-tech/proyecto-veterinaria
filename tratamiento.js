@@ -1,10 +1,9 @@
 requerirSesion();
 
-function Tratamiento(id, paciente, descripcion, fecha) {
+function Tratamiento(id, paciente, descripcion) {
     this.id = id;
     this.paciente = paciente;
     this.descripcion = descripcion;
-    this.fecha = fecha;
 }
 
 const formTratamiento = document.getElementById("formTratamiento");
@@ -16,17 +15,16 @@ formTratamiento.addEventListener("submit", function (evento) {
     const id = document.getElementById("idTratamiento").value.trim();
     const paciente = document.getElementById("paciente").value.trim();
     const descripcion = document.getElementById("descripcion").value.trim();
-    const fecha = document.getElementById("fecha").value;
 
-    if (id === "" || paciente === "" || descripcion === "" || fecha === "") {
+    if (id === "" || paciente === "" || descripcion === "") {
         abrirModal({
             titulo: "Faltan datos",
-            mensaje: "Completa el ID, el paciente, la descripción y la fecha."
+            mensaje: "Completa el ID, el paciente y la descripción."
         });
         return;
     }
 
-    const nuevoTratamiento = new Tratamiento(id, paciente, descripcion, fecha);
+    const nuevoTratamiento = new Tratamiento(id, paciente, descripcion);
 
     const fila = document.createElement("tr");
 
@@ -41,10 +39,6 @@ formTratamiento.addEventListener("submit", function (evento) {
     const celdaDescripcion = document.createElement("td");
     celdaDescripcion.textContent = nuevoTratamiento.descripcion;
     fila.appendChild(celdaDescripcion);
-
-    const celdaFecha = document.createElement("td");
-    celdaFecha.textContent = nuevoTratamiento.fecha;
-    fila.appendChild(celdaFecha);
 
     tablaTratamientos.appendChild(fila);
 
